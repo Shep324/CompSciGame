@@ -107,7 +107,12 @@ public class GraphicsPanel extends JPanel implements KeyListener{
 		}
 		for (int i =0;i<cans.size();i++)
 			cans.get(i).move(this);
-
+		for (int i = 0; i<cans.size();i++) {
+			if (sprite.collision(cans.get(i))) {
+				sprite.die();
+			}
+				
+		}
 
 			// You can also check to see if two objects intersect like this. In this case if the sprite collides with the
 			// item, the item will get smaller. 
